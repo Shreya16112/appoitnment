@@ -81,17 +81,29 @@ WSGI_APPLICATION = 'appointment_project.wsgi.application'
 #     }
 # }
 
+# my sql
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'appointment',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'root',
+        'PASSWORD': 'root@123',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
 
+# postgress
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'appointment',
+#         'USER': 'themedius',
+#         'PASSWORD': 'medius@123',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
