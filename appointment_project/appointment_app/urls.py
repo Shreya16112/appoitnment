@@ -22,5 +22,6 @@ urlpatterns = [
     path('create_slot/', csrf_exempt(views.Appointment.as_view())),
     path('create_std/', csrf_exempt(views.Student.as_view())),
     path('greater_than_number/', views.StudentGreaterThan.as_view()),
+    path('get_school_details/', views.GetSchoolDetails.as_view()),
 
 ]

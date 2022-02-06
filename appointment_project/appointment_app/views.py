@@ -83,3 +83,35 @@ class StudentGreaterThan(View):
 			res['msg']	= e
 
 		return HttpResponse(str(res))
+
+
+class GetSchoolDetails(View):
+	"""docstring for Appointment"""
+	def get(self,request):
+		res = {
+			"status" : False,
+			"data"	 : {},
+			"msg"	 : "Failed"
+		}
+
+		try:
+			data = json.loads(request.body.decode('utf-8'))
+
+			if "std_name" in data:
+				Student = student.objects.get(name=data['std_name'])
+
+				res['data']['std_name'] 	=   Student.name
+				res['data']['age'] 			=   Student.age
+
+				res['data']['sch_name'] 	=   Student.sch.name
+				res['data']['sch_adress'] 	=   Student.sch.address
+
+				res['status'] 	= 	True
+				res['msg']		= 	"success"
+			else:
+				res['msg'] = "Invalid Request"
+
+		except Exception as e:
+			res['msg']	= e
+
+		return HttpResponse(str(res))

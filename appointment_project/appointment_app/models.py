@@ -11,9 +11,21 @@ class appointment(models.Model):
     customer_name 	= models.CharField(max_length=255)
     agent_name 		= models.CharField(max_length=255)	
 
+
+class school(models.Model):
+    name           = models.CharField(max_length=255)
+    address        = models.CharField(max_length=255)
+
 class student(models.Model):
-    name 			= models.CharField(max_length=255)
-    city  			= models.CharField(max_length=255)
-    age 			= models.IntegerField(max_length=20)
-    std 			= models.CharField(max_length=255)
-    marks			= models.FloatField(max_length=20)
+    name            = models.CharField(max_length=255)
+    city            = models.CharField(max_length=255)
+    age             = models.IntegerField()
+    std             = models.CharField(max_length=255)
+    marks           = models.FloatField(max_length=20)
+    sch             = models.ForeignKey(school, on_delete=models.CASCADE)
+
+
+# prpose of forign key
+# 
+
+    
