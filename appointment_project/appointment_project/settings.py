@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appointment_app'
+    'appointment_app',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -93,19 +94,12 @@ DATABASES = {
     }
 }
 
-# postgress
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'appointment',
-#         'USER': 'themedius',
-#         'PASSWORD': 'medius@123',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-# Password validation
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        # 'rest_framework.permissions.DjangoModelPermissions',
+        'rest_framework.permissions.AllowAny',
+    )
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {

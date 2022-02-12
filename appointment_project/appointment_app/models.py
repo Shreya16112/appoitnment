@@ -22,10 +22,13 @@ class student(models.Model):
     age             = models.IntegerField()
     std             = models.CharField(max_length=255)
     marks           = models.FloatField(max_length=20)
-    sch             = models.ForeignKey(school, on_delete=models.CASCADE)
+    sch             = models.ForeignKey(school, on_delete=models.CASCADE) # primary key of school
 
 
-# prpose of forign key
-# 
+
+
+# std = student.objects.filter(sch__name=self.schol_name)
+# print(std.name)
+
 
     

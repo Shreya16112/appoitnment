@@ -23,5 +23,12 @@ urlpatterns = [
     path('create_std/', csrf_exempt(views.Student.as_view())),
     path('greater_than_number/', views.StudentGreaterThan.as_view()),
     path('get_school_details/', views.GetSchoolDetails.as_view()),
+    path('student/', views.Student_2.as_view()),
+
+    path('student_list/', views.StudentList.as_view()),
+    path('student_detail/', views.StudentDetail.as_view()),
+    path('student_create/', csrf_exempt(views.StudentCreate.as_view())),
+    path('student_update/', csrf_exempt(views.StudentUpdate.as_view())),
+    path('student_delete/', csrf_exempt(views.StudentDelete.as_view())),
 
 ]
